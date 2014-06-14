@@ -4,10 +4,22 @@
         <meta charset="UTF-8" />
         <title>Lambdas</title>
         <script>
-
+        var buenosDias =function(){
+        	alert("buenos dìas");
+        };
+        var buenasNoches =function(){
+        	alert("Buenas noches");
+        };
+       	function saludar(unaFuncion){
+        	unaFuncion();
+        };
+        
         </script>
     </head>
     <body>
-
+	<input type="button" onclick="buenosDias()" value="saludar" />
+	<input type="button" onclick="buenasNoches()" value="despedida" />
+	<input type="button" onclick="saludar(buenosDias)" value="saludar2" />
+	<input type="button" onclick="saludar(buenasNoches)" value="despedida2" />
     </body>
 </html>

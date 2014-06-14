@@ -5,13 +5,52 @@
         <script>
         
             //funcion
+            function saludar(nombre){
+            	document.write("<p>buenos dias" + nombre+"</p>");
+            	return 0;
+            }
+            //funcion anonima o lambdas
             
-            //funcion anonima
+            var sumar=function(a,b){
+            	var c=a+b;
+            	document.write("<p>la suma es: "+c+"</p>");
+            	return c;
+            };
+            
+            var multiplicar=function(a,b){
+            	var c=a*b;
+            	document.write("<p>la multiplicacion es: "+c+"</p>");
+            	return c;
+            };
             
             //una funcion como argumento
             //sepuede definir ahi mismo
+            //una funcion dentro de otra funcion se llama closures
+            var operacion=function(unaFuncion){
+            	var resultado=unaFuncion(3,4);
+            	alert("el resultado es: "+ resultado);
+            };
+            
+            //closure - autoejecutable
+            
+            (function(){
+            	var funcion1=function(){
+            		document.write("soy la funcion 1");
+            	};
+            	var dato =5;
+            	
+            	funcion1();
+            })();
+            
+            
 
         </script>
     </head>
-    <body></body>
+    <body>
+    	<input type="button" onclick="saludar('julio')" value="saludar" />
+    	<input type="button" onclick="sumar(1,2)" value="sumar" />
+    	<input type="button" onclick="multiplicar(1,2)" value="multiplicar" />
+    	<input type="button" onclick="operacion(sumar)" value="operacion" />
+    	<input type="button" onclick="operacion(multiplicar)" value="operacion 2" />
+    </body>
 </html>
